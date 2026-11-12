@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "scope": "api_key",
+    "tier": "free",
+    "endpoint": "*",
+    "capacity": 10,
+    "refillRatePerSec": 0.5,
+    "failMode": "open"
+  },
+  {
+    "id": 2,
+    "scope": "api_key",
+    "tier": "pro",
+    "endpoint": "*",
+    "capacity": 100,
+    "refillRatePerSec": 10,
+    "failMode": "open"
+  },
+  {
+    "id": 3,
+    "scope": "api_key",
+    "tier": "free",
+    "endpoint": "/api/search",
+    "capacity": 5,
+    "refillRatePerSec": 0.2,
+    "failMode": "open"
+  },
+  {
+    "id": 4,
+    "scope": "ip",
+    "tier": "*",
+    "endpoint": "/api/login",
+    "capacity": 5,
+    "refillRatePerSec": 0.0833,
+    "failMode": "closed"
+  },
+  {
+    "id": 5,
+    "scope": "ip",
+    "tier": "*",
+    "endpoint": "*",
+    "capacity": 20,
+    "refillRatePerSec": 1,
+    "failMode": "open"
+  }
+]

@@ -1,0 +1,12 @@
+# Redis for the rate limiter demo.
+#   docker compose up -d
+#
+# Persistence is set to AOF "everysec": losing up to a second of counters in a crash is
+# acceptable for a rate limiter (approximate is fine, see README Step 1 and Step 8).
+services:
+  redis:
+    image: redis:7.4-alpine
+    container_name: ratelimiter-redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec", "--maxmemory", "256mb", "--maxmemory-policy", "volatile-ttl"]
